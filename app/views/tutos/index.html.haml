@@ -1,0 +1,21 @@
+.container
+  .row
+  %h1 Tutorials
+
+.container
+  .row
+    .col-12
+      %ul#tuto
+        %li= render @tutos
+
+    %div.col-12
+    = form_for((@tuto), remote: true) do |f| 
+      = f.label :title
+      %br
+      = f.text_field :title, {:class => "form-control"}
+      %br
+      = f.label :url
+      %br
+      = f.text_field :url, {:class => "form-control"}
+      %br
+      = f.submit :id => "send"
